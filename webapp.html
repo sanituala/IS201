@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Football Position Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #1e1e1e;
+      color: white;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #position {
+      font-size: 2em;
+      margin-top: 40px;
+    }
+    #reason {
+      font-size: 1.2em;
+      margin-top: 15px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>What Football Position Are You Today?</h1>
+  <button id="generateButton">Find Out</button>
+  <div id="position"></div>
+  <div id="reason"></div>
+
+  <script>
+    const positions = [
+      {
+        name: "Quarterback",
+        reason: "You're a natural leader who thrives under pressure. Big brain, big arm."
+      },
+      {
+        name: "Running Back",
+        reason: "Fast, fearless, and always pushing forward—even when the gap is tight."
+      },
+      {
+        name: "Wide Receiver",
+        reason: "You've got hands like glue and a flair for the dramatic. Highlight reel material."
+      },
+      {
+        name: "Tight End",
+        reason: "Strong, versatile, and always dependable—on the line or downfield."
+      },
+      {
+        name: "Offensive Lineman",
+        reason: "You protect your people like a wall of steel. Unsung hero energy."
+      },
+      {
+        name: "Defensive Lineman",
+        reason: "You're built for battle—first off the line and always hungry for a sack."
+      },
+      {
+        name: "Linebacker",
+        reason: "You see the whole field, hit hard, and lead louder. Alpha defense."
+      },
+      {
+        name: "Cornerback",
+        reason: "Quick feet, quicker instincts. You live for breaking up passes and breaking hearts."
+      },
+      {
+        name: "Safety",
+        reason: "You're the last line and the smartest one back there. Clutch under pressure."
+      },
+      {
+        name: "Kicker",
+        reason: "Cool. Calm. Ice in your veins. You walk on, win games, walk off."
+      },
+      {
+        name: "Punter",
+        reason: "Underrated but vital. You flip the field and silence crowds."
+      },
+      {
+        name: "Long Snapper",
+        reason: "You’re precise, reliable, and lowkey elite. Nobody notices—unless you mess up (which you don’t)."
+      },
+      {
+        name: "Water Boy",
+        reason: "I thought it would be funny, hahaha."
+      }
+    ];
+
+    document.getElementById("generateButton").addEventListener("click", function() {
+      const randomIndex = Math.floor(Math.random() * positions.length);
+      const picked = positions[randomIndex];
+      document.getElementById("position").textContent = "You're a " + picked.name + "!";
+      document.getElementById("reason").textContent = picked.reason;
+    });
+  </script>
+
+</body>
+</html>
